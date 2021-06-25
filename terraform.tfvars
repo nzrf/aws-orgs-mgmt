@@ -1,0 +1,1 @@
+#require_s3_encryption_target_ids =  [ aws_organizations_organizational_unit.application.nonprod.id ] 
