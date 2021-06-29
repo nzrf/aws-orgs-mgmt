@@ -16,13 +16,6 @@ resource "aws_organizations_policy" "ai_data_services_opt_out" {
   EOT 
 }
 
-#resource "aws_organizations_policy" "ai_data_services_opt_out" {
-#  name        = "ai-data_services-optout"
-#  description = "Opt Out of data services for all services and accounts"
-#  content = <<EOT
-#  EOT 
-#}  
-
 resource "aws_organizations_policy_attachment" "require_data_services_opt_out" {
   count = length(var.ai_data_services_optout_target_ids)
 
