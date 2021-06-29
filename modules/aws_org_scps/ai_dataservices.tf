@@ -24,8 +24,8 @@ resource "aws_organizations_policy" "ai_data_services_opt_out" {
 #}  
 
 resource "aws_organizations_policy_attachment" "require_data_services_opt_out" {
-  count = length(var.ai_data_services_optout_ids)
+  count = length(var.ai_data_services_optout_target_ids)
 
   policy_id = aws_organizations_policy.ai_data_services_opt_out.id
-  target_id = element(var.ai_data_services_optout_ids.*, count.index)
+  target_id = element(var.ai_data_services_optout_target_ids.*, count.index)
 }
