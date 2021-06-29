@@ -1,3 +1,5 @@
+#SCP to ensure that s3 objects are encrypted with server side encryption 
+
 data "aws_iam_policy_document" "require_s3_encryption" {
   statement {
     effect    = "Deny"
